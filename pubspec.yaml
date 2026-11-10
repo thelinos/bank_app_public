@@ -1,0 +1,107 @@
+name: bank_app
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.13.0 <4.0.0'
+
+dependencies:
+  kennedy_mega_bank_api:
+    path: packages/kennedy_mega_bank_api
+  animations: ^3.0.0
+  auto_route: ^11.2.0
+  auto_size_text: ^3.0.0
+  bloc: ^9.0.0
+  bloc_concurrency: ^0.3.0
+
+  cupertino_icons: ^2.0.0
+  device_preview: ^3.0.0
+  dio: ^5.7.0
+  fast_immutable_collections: ^12.0.0
+
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^9.1.1
+  flutter_hooks: ^0.21.2
+  flutter_launcher_icons: ^0.14.3
+  flutter_native_splash: ^2.3.5
+  flutter_svg: ^2.0.9
+  formz: ^0.8.0
+  freezed_annotation: ^3.1.0
+  gap: ^3.0.1
+  get_it: ^9.3.0
+  hive_ce: ^2.11.0
+  hive_ce_flutter: ^2.3.0
+  hydrated_bloc: ^11.0.0
+  iconsax: ^0.0.8
+  image_cropper: ^13.0.0
+  image_picker: ^1.0.4
+  injectable: ^3.0.0
+  intl: ^0.20.2
+  json_annotation: ^4.12.0
+  logger: ^2.0.2+1
+  multiple_result: ^5.1.0
+  package_info_plus: ^10.2.1
+  path_provider: ^2.1.1
+  shared_preferences: ^2.0.0
+  rxdart: ^0.28.0
+  stack_trace: ^1.11.1
+  country_icons: ^3.0.0
+  currency_symbols: ^0.0.1+2
+  material_ui: ^1.8.0
+  fpdart: ^1.2.0
+
+dev_dependencies:
+  auto_route_generator: ^10.6.0
+  build_runner: ^2.15.0
+  flutter_gen_runner: ^5.15.0
+  flutter_test:
+    sdk: flutter
+  freezed: ^3.2.0
+  hive_ce_generator: ^1.11.0
+  injectable_generator: ^3.1.3
+  json_serializable: ^6.14.0
+  very_good_analysis: ^11.0.0
+
+
+flutter_gen:
+  output: lib/shared/gen/ # Optional (default: lib/gen/)
+  line_length: 80
+
+  integrations:
+    image: true
+    flutter_svg: true
+    rive: true
+    lottie: true
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/json/
+  fonts:
+    - family: OpenSans
+      fonts:
+        - asset: assets/fonts/OpenSans-Regular.ttf
+
+flutter_native_splash:
+  background_image: "assets/images/splash_background_image.png"
+
+  android_12:
+    image: assets/images/app_icon_large.png
+  android: true
+  ios: true
+  web: false
+
+flutter_launcher_icons:
+  android: "bank_icon"
+  image_path_android: "assets/icons/playstore.png"
+  ios: "bank_icon"
+  image_path_ios: "assets/icons/appstore.png"
+  remove_alpha_ios: true
+  min_sdk_android: 21 # android min sdk min:16, default 21
