@@ -60,5 +60,6 @@ app.*.map.json
 *.config.dart
 
 # Environment files
-.env.local
-.env.*.local
+.env
+.env.*
+!.env.example

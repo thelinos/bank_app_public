@@ -5,8 +5,9 @@ transactions and their running account balance.
 
 ## Current Progress (November 2026)
 
-The app has a feature-first structure and currently uses local/mock services
-rather than a connected backend. Current UI and navigation work includes:
+The app has a feature-first structure. The dashboard and customer data still
+use local/mock services, while the sign-in data layer makes a request through
+the generated API client. Current UI and navigation work includes:
 
 - A dashboard with Home and Transactions sections, including All, Debit and
   Credit transaction tabs.
@@ -18,6 +19,8 @@ rather than a connected backend. Current UI and navigation work includes:
 
 The account-management routes and screens are UI foundations; they do not
 represent a complete backend-connected account recovery or email-change flow.
+The generated client's current-user stream and logout helpers are also not yet
+connected to the app's authentication repository and BLoCs.
 
 ## Tech stack
 
@@ -26,8 +29,8 @@ represent a complete backend-connected account recovery or email-change flow.
   `hydrated_bloc`, with `freezed` for events and states
 * **Navigation:** `auto_route` (declarative routes in `lib/features/routes/app_routes.dart`)
 * **Dependency injection:** `get_it` + `injectable`
-* **Backend:** Local/mock implementations today; integration with a custom
-  Express REST server; a generated OpenAPI client is available but is not yet
+* **Backend:** Local/mock dashboard and customer data; the generated OpenAPI
+  client is partially integrated for sign-in, with most endpoints not yet
   connected to app repositories
 * **Local storage:** `hive`, `shared_preferences`, in-memory storage
 * **Other notables:** `flutter_hooks`, `formz`, `flutter_svg`, `flutter_gen`,
@@ -90,9 +93,11 @@ The backend's OpenAPI document is checked in at
 [`openapi/kennedy-mega-bank.openapi.json`](openapi/kennedy-mega-bank.openapi.json).
 The standalone Dio client generated from it is in
 [`packages/kennedy_mega_bank_api/`](packages/kennedy_mega_bank_api/). It is
-declared as an app dependency and currently supplies the Dio client for the
-authentication SSE data layer; the remaining generated endpoints are not
-connected to app repositories, BLoCs, or UI.
+declared as an app dependency and is used by the sign-in data layer to call the
+generated authentication login endpoint. Current-user SSE and logout helpers
+exist in the app but are not yet wired into its authentication repository or
+BLoCs; the remaining generated endpoints are not connected to app repositories,
+BLoCs, or UI.
 
 With the backend running, regenerate the OpenAPI snapshot and client with:
 
@@ -132,14 +137,14 @@ Dio cookie handling when connecting authenticated calls. Override the generated
 default base URL at runtime as needed: the spec uses a relative server URL, and
 `localhost` on a mobile device does not point to the development computer.
 
-The authentication data layer subscribes to `GET /authentication/me/stream`
-using Server-Sent Events. The backend must authenticate this route with the same
-access-token cookie as `/authentication/me`, send an initial current-user
-snapshot, then send another `data:` event containing the existing
-`UserEnvelope` JSON whenever the user profile changes. A `data: null` event
-clears the current user. The endpoint must use `Content-Type: text/event-stream`
-and keep the connection open; this repository does not contain the backend
-implementation of that route.
+The `AuthenticationData` helper implements a Server-Sent Events subscription to
+`GET /authentication/me/stream`, but it is not wired into the app's auth flow
+yet. The backend must authenticate this route with the same access-token cookie
+as `/authentication/me`, send an initial current-user snapshot, then send
+another `data:` event containing the existing `UserEnvelope` JSON whenever the
+user profile changes. A `data: null` event clears the current user. The endpoint
+must use `Content-Type: text/event-stream` and keep the connection open; this
+repository does not contain the backend implementation of that route.
 
 ## Getting started
 
@@ -157,8 +162,9 @@ Run the app against a connected device, Android emulator or iOS simulator:
 flutter run -t lib/environment/main_development.dart   # or main_staging.dart / main_production.dart
 ```
 
-VS Code launch configurations for the flavors are in `.vscode/launch.json`, and
-Android Studio / IntelliJ run configurations in `.run/`.
+The app does not currently load `.env` files or include checked-in IDE launch
+configurations. Configure runtime API base URLs as part of the planned
+environment-specific backend integration.
 
 ## Checks
 
@@ -169,17 +175,21 @@ flutter test
 
 ## Known issues
 
-1. **Authentication and storage are local/mock implementations.** The
-   generated backend API client is not yet connected to app repositories.
+1. **Backend integration is partial.** Sign-in calls the generated login
+   endpoint, but the session lifecycle (including cookie handling and current
+   user updates) and the remaining backend endpoints are not wired into app
+   repositories and BLoCs.
 2. **Customer data is in-memory.** The current local storage service does not
    persist data across app restarts.
-3. **Test coverage is limited.** The repository currently has a single app
-   test file; automated coverage will be expanded across app features.
+3. **Test coverage is limited.** Four test files currently cover the app shell,
+   authentication data, SSE parsing and stream utilities. Feature-level
+   coverage for the dashboard, transactions and settings remains to be added.
 
 ## What's Next
 
-1. Connect the standalone generated client to feature repositories, including
-   environment-specific base URLs and cookie-session handling.
+1. Complete backend integration: configure environment-specific base URLs and
+   cookie-session handling, then connect the generated client to authentication
+   and other feature repositories.
 2. Expand automated tests across authentication, dashboard, transactions and
    settings.
 3. Add country selection and use it to adapt transaction direction icons and
