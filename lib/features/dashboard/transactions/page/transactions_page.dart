@@ -7,22 +7,8 @@ import "package:bank_app/features/routes/app_routes.gr.dart"
 import "package:bank_app/shared/common/constants.dart";
 import "package:fast_immutable_collections/fast_immutable_collections.dart"
     show IList;
-import "package:flutter/material.dart"
-    show
-        Align,
-        BouncingScrollPhysics,
-        BuildContext,
-        Color,
-        Column,
-        Container,
-        EdgeInsets,
-        Flexible,
-        Padding,
-        Stack,
-        StatelessWidget,
-        Text,
-        Widget;
 import "package:flutter/rendering.dart";
+import "package:material_ui/material_ui.dart" show Align, BouncingScrollPhysics, BuildContext, Column, Container, Flexible, Padding, Stack, StatelessWidget, Text, Widget;
 
 typedef IListOfPageRouteInfo = IList<PageRouteInfo<Object?>>;
 

@@ -2,7 +2,7 @@ import "package:bank_app/features/dashboard/components/bank_bottom_navigation_ba
     show RouteInfo;
 import "package:bank_app/shared/gen/assets.gen.dart";
 import "package:fast_immutable_collections/fast_immutable_collections.dart";
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart";
 
 class const BankBottomNavigationBarTile({
   required final int _activeTabIndex,

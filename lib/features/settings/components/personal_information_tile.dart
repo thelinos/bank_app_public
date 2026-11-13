@@ -1,5 +1,5 @@
 import "package:bank_app/shared/common/constants.dart" show Constants;
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart";
 
 class const PersonalInformationTile({
   required final String _label,

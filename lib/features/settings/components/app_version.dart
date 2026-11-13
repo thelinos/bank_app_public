@@ -2,7 +2,7 @@ import "package:bank_app/features/settings/common/settings_constants.dart"
     show SettingsConstants;
 import "package:bank_app/shared/core/extensions/build_context_x.dart"
     show BuildContextX;
-import "package:flutter/material.dart"
+import "package:material_ui/material_ui.dart"
     show
         Border,
         BorderSide,

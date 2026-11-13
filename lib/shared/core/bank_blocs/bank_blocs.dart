@@ -13,11 +13,11 @@ import "package:bank_app/features/sign_up_flow/sign_up/bloc/sign_up_bloc.dart";
 import "package:bank_app/features/sign_up_flow/sign_up/repository/sign_up_repository.dart"
     show SignUpRepository;
 import "package:bank_app/shared/app/bank_app.dart" show BankApp;
-import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
 import "package:get_it/get_it.dart" show GetIt;
 import "package:image_cropper/image_cropper.dart";
 import "package:image_picker/image_picker.dart";
+import "package:material_ui/material_ui.dart";
 
 class BankBlocs extends StatelessWidget {
   const new({super.key});

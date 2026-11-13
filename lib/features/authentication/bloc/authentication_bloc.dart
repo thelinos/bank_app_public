@@ -14,10 +14,9 @@ part "authentication_state.dart";
 
 class AuthenticationBloc
     extends Bloc<AuthenticationEvent, AuthenticationState> {
-  AuthenticationBloc({
-    required AuthenticationRepository authenticationRepository,
-  }) : _authenticationRepository = authenticationRepository,
-       super(const Unknown()) {
+  new({
+    required this._authenticationRepository,
+  }) : super(const Unknown()) {
     on<_AuthSubscriptionRequested>(
       _onAuthSubscriptionRequested,
       transformer: droppable(),
@@ -43,7 +42,7 @@ class AuthenticationBloc
   ) async {
     await emit.forEach(
       _authenticationRepository.onUserChanges,
-      onData: (User? user) {
+      onData: (user) {
         if (user == null) {
           return const AuthenticationState.unauthenticated();
         }

@@ -1,7 +1,7 @@
 import "package:bank_app/features/routes/app_routes.dart";
 import "package:bank_app/features/routes/observer/bank_app_route_observer.dart";
-import "package:flutter/material.dart";
 import "package:get_it/get_it.dart";
+import "package:material_ui/material_ui.dart";
 
 final AppRoutes _appRoutes = GetIt.I.get<AppRoutes>();
 

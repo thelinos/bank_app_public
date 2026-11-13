@@ -1,13 +1,12 @@
 import "package:bank_app/shared/core/extensions/build_context_x.dart";
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart";
 
 class FirstNameTextField extends StatelessWidget {
-  const FirstNameTextField({
+  const new({
     super.key,
-    void Function(String)? onChanged,
-    String? errorText,
-  })  : _onChanged = onChanged,
-        _errorText = errorText;
+    this._onChanged,
+    this._errorText,
+  });
 
   final void Function(String)? _onChanged;
   final String? _errorText;

@@ -6,7 +6,7 @@ enum TransactionNarration{
   withdrawal((remoteValue: "withdrawal", localValue: "Withdrawal")),
   gift((remoteValue: "gift", localValue: "Gift")),
   inflow((remoteValue: "inflow", localValue: "Inflow"));
-  const TransactionNarration(this.transactionNarration);
+  new(this.transactionNarration);
 
   final TransactionNarrationRecords transactionNarration;
 }

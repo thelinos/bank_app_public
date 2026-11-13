@@ -1,7 +1,7 @@
 import "package:auto_route/auto_route.dart" show RoutePage;
 import "package:bank_app/features/dashboard/components/transactions.dart"
     show Transactions;
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart";
 
 @RoutePage()
 class const AllTransactionsPage({super.key}) extends StatelessWidget {

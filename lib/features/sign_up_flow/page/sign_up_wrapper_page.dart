@@ -1,9 +1,9 @@
 import "package:auto_route/auto_route.dart";
-import "package:flutter/material.dart";
+import "package:flutter/widgets.dart"
+    show BuildContext, StatelessWidget, Widget;
 
 @RoutePage()
-class SignUpFlowPages extends StatelessWidget {
-  const SignUpFlowPages({super.key});
+class const SignUpFlowPages({super.key}) extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {

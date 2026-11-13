@@ -11,7 +11,7 @@ import "package:bank_app/shared/utils/stream/sse_data_stream.dart"
 import "package:bank_app/shared/utils/stream/stream.utils.dart"
     show StreamUtils;
 import "package:dio/dio.dart"
-    show CancelToken, DioException, Options, ResponseBody, ResponseType;
+    show CancelToken, DioException, Options, ResponseBody;
 import "package:intl/intl.dart" show NumberFormat;
 import "package:kennedy_mega_bank_api/kennedy_mega_bank_api.dart"
     show AuthenticationApi, KennedyMegaBankApi, UserEnvelope;
@@ -71,7 +71,7 @@ class AuthenticationData({required final KennedyMegaBankApi api}) {
         "/authentication/me/stream",
         options: Options(
           headers: const {"Accept": "text/event-stream"},
-          responseType: ResponseType.stream,
+          responseType: .stream,
           receiveTimeout: Duration.zero,
           extra: const {
             "secure": [

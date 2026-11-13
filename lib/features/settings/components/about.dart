@@ -3,7 +3,7 @@ import "package:bank_app/features/settings/common/settings_constants.dart"
 import "package:bank_app/features/settings/components/settings_page_tile.dart"
     show SettingsPageTile;
 import "package:bank_app/shared/common/constants.dart" show Constants;
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart";
 
 class const About({super.key}) extends StatelessWidget {
   @override

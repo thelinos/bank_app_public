@@ -5,7 +5,7 @@ import "package:bank_app/shared/common/constants.dart" show Constants;
 import "package:bank_app/shared/core/extensions/build_context_x.dart"
     show BuildContextX;
 import "package:fast_immutable_collections/fast_immutable_collections.dart";
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart";
 
 class TransactionRouteInfo({
   required final int index,

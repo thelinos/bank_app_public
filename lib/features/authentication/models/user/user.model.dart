@@ -6,7 +6,7 @@ part "user.model.freezed.dart";
 
 @freezed
 sealed class UserModel with _$UserModel {
-  const factory UserModel({
+  const factory({
     required StatusUser status,
     required String id,
     required String email,

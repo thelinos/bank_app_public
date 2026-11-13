@@ -4,9 +4,9 @@ import "package:auto_route/auto_route.dart" show AutoTabsRouter, TabsRouter;
 import "package:auto_size_text/auto_size_text.dart";
 import "package:bank_app/features/settings/common/settings_constants.dart"
     show SettingsConstants;
-import "package:flutter/material.dart";
 import "package:gap/gap.dart";
 import "package:iconsax/iconsax.dart";
+import "package:material_ui/material_ui.dart";
 
 extension BuildContextX on BuildContext {
   double get screenWidth => MediaQuery.widthOf(this);

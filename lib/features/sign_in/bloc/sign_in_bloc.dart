@@ -2,24 +2,22 @@ import "dart:async";
 
 import "package:bank_app/features/authentication/models/user.dart";
 import "package:bank_app/features/authentication/repository/authentication_repository.dart";
-import "package:bank_app/shared/core/bank_logger/bank_logger.dart";
 import "package:bank_app/features/sign_in/repository/sign_in_repository.dart";
+import "package:bank_app/shared/core/bank_logger/bank_logger.dart";
 import "package:bloc/bloc.dart";
 import "package:bloc_concurrency/bloc_concurrency.dart";
 import "package:formz/formz.dart";
 import "package:freezed_annotation/freezed_annotation.dart";
 
+part "sign_in_bloc.freezed.dart";
 part "sign_in_event.dart";
 part "sign_in_state.dart";
-part "sign_in_bloc.freezed.dart";
 
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
-  SignInBloc({
-    required AuthenticationRepository authenticationRepository,
-    required SignInRepository signInRepository,
-  }) : _signInRepository = signInRepository,
-       _authenticationRepository = authenticationRepository,
-       super(const _SignInState()) {
+  new({
+    required this._authenticationRepository,
+    required this._signInRepository,
+  }) : super(const _SignInState()) {
     on<_EmailChanged>(_onEmailChanged, transformer: sequential());
     on<_PasswordChanged>(_onPasswordChanged, transformer: sequential());
     on<_FormSubmitted>(_onSubmittingForms, transformer: restartable());

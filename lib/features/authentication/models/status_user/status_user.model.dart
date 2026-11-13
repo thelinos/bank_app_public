@@ -4,6 +4,6 @@ part "status_user.model.freezed.dart";
 
 @freezed
 sealed class StatusUser with _$StatusUser {
-  const factory StatusUser({required String message, required int status}) =
+  const factory({required String message, required int status}) =
       _StatusUser;
 }

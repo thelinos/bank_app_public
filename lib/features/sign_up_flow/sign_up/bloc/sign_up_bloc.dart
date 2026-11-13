@@ -2,26 +2,24 @@ import "dart:async";
 
 import "package:bank_app/features/authentication/models/user.dart";
 import "package:bank_app/features/authentication/repository/authentication_repository.dart";
+import "package:bank_app/features/sign_up_flow/sign_up/repository/sign_up_repository.dart";
 import "package:bank_app/shared/core/bank_logger/bank_logger.dart";
 import "package:bank_app/shared/core/forms_inputs/email.dart";
 import "package:bank_app/shared/core/forms_inputs/password.dart";
-import "package:bank_app/features/sign_up_flow/sign_up/repository/sign_up_repository.dart";
 import "package:bloc/bloc.dart";
 import "package:bloc_concurrency/bloc_concurrency.dart";
 import "package:formz/formz.dart";
 import "package:freezed_annotation/freezed_annotation.dart";
 
+part "sign_up_bloc.freezed.dart";
 part "sign_up_event.dart";
 part "sign_up_state.dart";
-part "sign_up_bloc.freezed.dart";
 
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
-  SignUpBloc({
-    required AuthenticationRepository authenticationRepository,
-    required SignUpRepository signUpRepository,
-  }) : _authenticationRepository = authenticationRepository,
-       _signUpRepository = signUpRepository,
-       super(const _SignUpState()) {
+  new({
+    required this._authenticationRepository,
+    required this._signUpRepository,
+  }) : super(const _SignUpState()) {
     on<_AuthSubscriptionRequested>(
       _onSubscribingToUserAuthentication,
       transformer: restartable(),
@@ -139,7 +137,7 @@ enum MatchingPasswords {
   bothPasswordMustMatch("Both passwords must match"),
   theyMatch(null);
 
-  const MatchingPasswords(this.message);
+  new(this.message);
 
   final String? message;
 }

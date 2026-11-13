@@ -27,13 +27,10 @@ class CustomerPartialPersonalInfoBloc
           CustomerPartialPersonalInfoEvent,
           CustomerPartialPersonalInfoState
         > {
-  CustomerPartialPersonalInfoBloc({
-    required AuthenticationRepository authenticationRepository,
-    required CustomerPartialPersonalInfoRepository
-    partialPersonalInfoRepository,
-  }) : _authenticationRepository = authenticationRepository,
-       _partialPersonalInfoRepository = partialPersonalInfoRepository,
-       super(const _CustomerPartialPersonalInfoState()) {
+  new({
+    required this._authenticationRepository,
+    required this._partialPersonalInfoRepository,
+  }) : super(const _CustomerPartialPersonalInfoState()) {
     on<_AuthSubscriptionRequested>(
       _onAuthSubscriptionRequested,
       transformer: restartable(),

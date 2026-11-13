@@ -5,11 +5,10 @@ import "package:bank_app/features/authentication/core/constants/auth_constants.d
     show AuthConstants;
 import "package:bank_app/shared/common/components/password_text_field.dart"
     show PasswordTextField;
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart" show BuildContext, ButtonStyle, Color, Column, FilledButton, Padding, RoundedRectangleBorder, Scaffold, Size, SizedBox, StatelessWidget, Text, Widget;
 
 @RoutePage()
-class SetNewPasswordPage extends StatelessWidget {
-  const new({super.key});
+class const SetNewPasswordPage({super.key}) extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {

@@ -8,7 +8,7 @@ import "package:bank_app/shared/common/model/customer_transaction_data/customer_
     show CustomerTransactionDataModel;
 import "package:fast_immutable_collections/fast_immutable_collections.dart"
     show IList, IListConst;
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart";
 
 abstract class Constants {
   static const kStartGradients = LinearGradient(

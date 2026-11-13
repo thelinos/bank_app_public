@@ -1,12 +1,11 @@
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart";
 
 class PrimaryButton extends StatelessWidget {
-  const PrimaryButton({
-    required Widget buttonContent,
-    void Function()? onTap,
+  const new({
+    required this._buttonContent,
+    this._onTap,
     super.key,
-  })  : _buttonContent = buttonContent,
-        _onTap = onTap;
+  });
 
   final Widget _buttonContent;
   final void Function()? _onTap;

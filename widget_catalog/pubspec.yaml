@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   widgetbook: ^3.25.0
+  material_ui: ^1.8.0
   widgetbook_annotation: ^3.11.0
 
 dev_dependencies:

@@ -5,8 +5,8 @@ import "package:bank_app/shared/common/components/email_text_field.dart";
 import "package:bank_app/shared/common/components/primary_button.dart";
 import "package:bank_app/shared/common/constants.dart";
 import "package:bank_app/shared/core/extensions/build_context_x.dart";
-import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
+import "package:material_ui/material_ui.dart";
 
 @RoutePage()
 class ForgotPasswordPage extends StatelessWidget {

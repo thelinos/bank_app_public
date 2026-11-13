@@ -1,6 +1,7 @@
 // import "package:bank_app/shared/gen/assets.gen.dart" show Assets;
 import "package:bank_app/shared/common/constants.dart" show Constants;
-import "package:flutter/material.dart"
+import "package:iconsax/iconsax.dart" show Iconsax;
+import "package:material_ui/material_ui.dart"
     show
         // Align,
         BuildContext,
@@ -16,7 +17,6 @@ import "package:flutter/material.dart"
         StatelessWidget,
         Text,
         Widget;
-import "package:iconsax/iconsax.dart" show Iconsax;
 
 class const Profile({super.key}) extends StatelessWidget {
   @override

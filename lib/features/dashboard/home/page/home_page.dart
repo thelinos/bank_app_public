@@ -3,7 +3,7 @@ import "package:bank_app/features/dashboard/components/transactions.dart"
     show Transactions;
 import "package:bank_app/features/dashboard/home/components/account_details_card.dart";
 import "package:bank_app/shared/common/constants.dart" show Constants;
-import "package:flutter/widgets.dart";
+import "package:material_ui/material_ui.dart" show BuildContext, Color, Column, Container, EdgeInsetsGeometry, Row, StatelessWidget, Text, Widget;
 
 @RoutePage()
 class const HomePage({super.key}) extends StatelessWidget {

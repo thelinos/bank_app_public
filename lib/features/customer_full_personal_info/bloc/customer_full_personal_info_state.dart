@@ -2,7 +2,7 @@ part of "customer_full_personal_info_bloc.dart";
 
 @freezed
 abstract class CustomerFullPersonalInfoState with _$CustomerFullPersonalInfoState {
-  const factory CustomerFullPersonalInfoState({
+  const factory({
     String? picErrorMessage,
     String? errorMessage,
     User? user,

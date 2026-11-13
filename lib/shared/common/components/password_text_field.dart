@@ -1,17 +1,15 @@
 import "package:bank_app/shared/core/extensions/build_context_x.dart";
-import "package:flutter/material.dart";
 import "package:flutter_hooks/flutter_hooks.dart";
 import "package:iconsax/iconsax.dart";
+import "package:material_ui/material_ui.dart";
 
 class PasswordTextField extends HookWidget {
-  const PasswordTextField({
+  const new({
     required String hintText,
     super.key,
-    void Function(String)? onChanged,
-    String? errorText,
-  })  : _onChanged = onChanged,
-        _errorText = errorText,
-        _hinText = hintText;
+    this._onChanged,
+    this._errorText,
+  })  : _hinText = hintText;
 
   final void Function(String)? _onChanged;
   final String? _errorText;

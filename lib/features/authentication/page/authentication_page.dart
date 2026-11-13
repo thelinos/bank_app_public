@@ -3,7 +3,7 @@ import "package:auto_route/auto_route.dart";
 // import "package:bank_app/features/customer_partial_personal_info/bloc/customer_partial_personal_info_bloc.dart";
 // import "package:bank_app/features/routes/app_routes.gr.dart";
 // import "package:bank_app/features/sign_up/bloc/sign_up_bloc.dart";
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart";
 // import "package:flutter_bloc/flutter_bloc.dart";
 
 @RoutePage()

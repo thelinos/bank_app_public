@@ -5,8 +5,8 @@ import "package:bank_app/shared/common/model/customer_transaction_data/customer_
 import "package:bank_app/shared/core/enums/transaction_direction.dart";
 import "package:bank_app/shared/utils/number/number_formatter.dart"
     show NumberFormatter;
-import "package:flutter/material.dart";
 import "package:intl/intl.dart";
+import "package:material_ui/material_ui.dart";
 
 class const TransactionTile({
   required final CustomerTransactionDataModel _transaction,

@@ -1,17 +1,17 @@
-import 'dart:async';
-import 'package:bank_app/shared/common/model/customer/customer_model.dart';
-import 'package:bank_app/shared/core/bank_logger/bank_logger.dart';
-import 'package:multiple_result/multiple_result.dart';
+import "dart:async";
+import "package:bank_app/shared/common/model/customer/customer_model.dart";
+import "package:bank_app/shared/core/bank_logger/bank_logger.dart";
+import "package:multiple_result/multiple_result.dart";
 
 class LocalStorageService {
-  LocalStorageService._();
+  new _();
 
   static final Map<String, CustomerModel> _customerData = {};
   static final StreamController<CustomerModel?> _customerStreamController =
       StreamController<CustomerModel?>.broadcast();
 
   static Future<void> init() async {
-    BankLogger.info('LocalStorageService initialized successfully');
+    BankLogger.info("LocalStorageService initialized successfully");
   }
 
   static Future<Result<void, String>> saveCustomerData({
@@ -21,11 +21,11 @@ class LocalStorageService {
     try {
       _customerData[userId] = customer;
       _customerStreamController.add(customer);
-      BankLogger.info('Customer data saved for user: $userId');
+      BankLogger.info("Customer data saved for user: $userId");
       return const Result.success(null);
     } catch (e, stackTrace) {
       BankLogger.error(
-        'Error saving customer data',
+        "Error saving customer data",
         error: e,
         stackTrace: stackTrace,
       );
@@ -41,7 +41,7 @@ class LocalStorageService {
       return Result.success(customer);
     } catch (e, stackTrace) {
       BankLogger.error(
-        'Error getting customer data',
+        "Error getting customer data",
         error: e,
         stackTrace: stackTrace,
       );
@@ -67,14 +67,14 @@ class LocalStorageService {
         );
         _customerData[userId] = updatedCustomer;
         _customerStreamController.add(updatedCustomer);
-        BankLogger.info('Customer image updated for user: $userId');
+        BankLogger.info("Customer image updated for user: $userId");
         return const Result.success(null);
       } else {
-        return const Result.error('Customer not found');
+        return const Result.error("Customer not found");
       }
     } catch (e, stackTrace) {
       BankLogger.error(
-        'Error updating customer image',
+        "Error updating customer image",
         error: e,
         stackTrace: stackTrace,
       );
@@ -88,11 +88,11 @@ class LocalStorageService {
     try {
       _customerData.remove(userId);
       _customerStreamController.add(null);
-      BankLogger.info('Customer data deleted for user: $userId');
+      BankLogger.info("Customer data deleted for user: $userId");
       return const Result.success(null);
     } catch (e, stackTrace) {
       BankLogger.error(
-        'Error deleting customer data',
+        "Error deleting customer data",
         error: e,
         stackTrace: stackTrace,
       );

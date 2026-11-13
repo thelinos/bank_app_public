@@ -6,7 +6,7 @@ import "package:bank_app/shared/common/constants.dart" show Constants;
 import "package:bank_app/shared/common/model/customer_transaction_data/customer_transaction_data_model.dart";
 import "package:fast_immutable_collections/fast_immutable_collections.dart"
     show IList;
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart";
 
 class const Transactions({
   required final TransactionListIndicator _currentTransactionsIndicator,

@@ -7,7 +7,7 @@ typedef DelayCalculator = Duration Function(int attempt);
 
 @freezed
 sealed class RetryBehavior with _$RetryBehavior {
-  const factory RetryBehavior({
+  const factory({
     /// The base delay duration for retry attempts.
     @Default(Duration(milliseconds: 200)) Duration delayFactor,
 

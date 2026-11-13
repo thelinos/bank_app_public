@@ -2,22 +2,22 @@ part of "authentication_bloc.dart";
 
 @freezed
 class AuthenticationEvent with _$AuthenticationEvent {
-  const factory AuthenticationEvent.authSubscriptionRequested() =
+  const factory authSubscriptionRequested() =
       _AuthSubscriptionRequested;
 
-  const factory AuthenticationEvent.logoutRequested() = _LogoutRequested;
+  const factory logoutRequested() = _LogoutRequested;
 
-  const factory AuthenticationEvent.userReloaded() = _UserReloaded;
+  const factory userReloaded() = _UserReloaded;
 
-  const factory AuthenticationEvent.accountDeletionRequested() =
+  const factory accountDeletionRequested() =
       _AccountDeletionRequested;
 
-  const factory AuthenticationEvent.signUp() = _SignUp;
+  const factory signUp() = _SignUp;
 
-  const factory AuthenticationEvent.logIn() = _LogIn;
+  const factory logIn() = _LogIn;
 
-  const factory AuthenticationEvent.forgotPassword() = _ForgotPassword;
+  const factory forgotPassword() = _ForgotPassword;
 
-  const factory AuthenticationEvent.uploadCustomerPic() = _UploadCustomerPic;
+  const factory uploadCustomerPic() = _UploadCustomerPic;
 
 }

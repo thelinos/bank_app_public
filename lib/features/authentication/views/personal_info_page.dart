@@ -10,10 +10,10 @@ import "package:bank_app/shared/common/constants.dart";
 import "package:bank_app/shared/core/enums/gender.dart";
 import "package:bank_app/shared/core/enums/title.dart";
 import "package:bank_app/shared/core/extensions/build_context_x.dart";
-import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
 import "package:formz/formz.dart";
 import "package:gap/gap.dart";
+import "package:material_ui/material_ui.dart";
 
 @RoutePage()
 class PersonalInfoPage extends StatelessWidget implements AutoRouteWrapper {

@@ -1,5 +1,5 @@
 import "package:bank_app/shared/common/constants.dart" show Constants;
-import "package:flutter/material.dart" show Color, TextStyle;
+import "package:material_ui/material_ui.dart" show Color, TextStyle;
 
 abstract class SettingsConstants {
   static const TextStyle _defaultTileTextStyle =

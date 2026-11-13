@@ -1,8 +1,8 @@
 
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart";
 
 class LoadingShape extends CustomClipper<Path> {
-  LoadingShape();
+  new();
 
   @override
   Path getClip(Size size) {

@@ -1,6 +1,6 @@
 import "package:bank_app/shared/common/constants.dart" show Constants;
 import "package:bank_app/shared/core/enums/transaction_direction.dart";
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart";
 
 class const TransactionDirectionCard({
   required final TransactionDirection _transactionDirection,

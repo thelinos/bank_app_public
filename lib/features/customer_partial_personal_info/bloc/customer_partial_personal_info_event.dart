@@ -2,27 +2,27 @@ part of "customer_partial_personal_info_bloc.dart";
 
 @freezed
 class CustomerPartialPersonalInfoEvent with _$CustomerPartialPersonalInfoEvent {
-  const factory CustomerPartialPersonalInfoEvent.authSubscriptionRequested() =
+  const factory authSubscriptionRequested() =
       _AuthSubscriptionRequested;
-  const factory CustomerPartialPersonalInfoEvent.resetState() =
+  const factory resetState() =
       _ResetState;
 
-  const factory CustomerPartialPersonalInfoEvent.getCustomersFirstName({
+  const factory getCustomersFirstName({
     required String value,
   }) = _GetCustomersFirstName;
 
-  const factory CustomerPartialPersonalInfoEvent.getCustomersLastName({
+  const factory getCustomersLastName({
     required String value,
   }) = _GetCustomersLastName;
 
-  const factory CustomerPartialPersonalInfoEvent.getCustomersGender({
+  const factory getCustomersGender({
     required Gender gender,
   }) = _GetCustomersGender;
 
-  const factory CustomerPartialPersonalInfoEvent.getCustomersTitle({
+  const factory getCustomersTitle({
     required BankTitle title,
   }) = _GetCustomersTitle;
 
-  const factory CustomerPartialPersonalInfoEvent.submitCustomerDetail() =
+  const factory submitCustomerDetail() =
       _SubmitCustomerDetail;
 }

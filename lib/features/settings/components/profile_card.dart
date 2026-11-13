@@ -1,6 +1,6 @@
 import "package:bank_app/features/settings/components/personal_information.dart" show PersonalInformation;
 import "package:bank_app/features/settings/components/profile.dart" show Profile;
-import "package:flutter/material.dart"
+import "package:material_ui/material_ui.dart"
     show
         Align,
         BuildContext,

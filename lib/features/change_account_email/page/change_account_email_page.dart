@@ -1,5 +1,5 @@
 import "package:auto_route/auto_route.dart" show AutoRouter, RoutePage;
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart";
 
 @RoutePage()
 class ChangeAccountEmailPage extends StatelessWidget {

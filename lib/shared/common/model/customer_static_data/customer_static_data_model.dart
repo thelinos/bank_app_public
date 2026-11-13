@@ -8,14 +8,14 @@ part "customer_static_data_model.g.dart";
 
 @freezed
 abstract class CustomerStaticDataModel with _$CustomerStaticDataModel {
-  const factory CustomerStaticDataModel({
+  const factory({
     required String customerName,
     required Gender gender,
     required String title,
     String? imageUrl,
   }) = _CustomerStaticDataModel;
 
-  factory CustomerStaticDataModel.fromJson(Map<String, dynamic> json) =>
+  factory fromJson(Map<String, dynamic> json) =>
       _$CustomerStaticDataModelFromJson(json);
 }
 

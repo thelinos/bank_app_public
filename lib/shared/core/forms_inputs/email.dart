@@ -2,9 +2,9 @@ import "package:formz/formz.dart";
 import "package:freezed_annotation/freezed_annotation.dart";
 
 class Email extends FormzInput<String, EmailError> {
-  const Email.pure({String value = ""}) : super.pure(value);
+  const new pure({String value = ""}) : super.pure(value);
 
-  const Email.dirty({String value = ""}) : super.dirty(value);
+  const new dirty({String value = ""}) : super.dirty(value);
 
   static final _emailRegExp = RegExp(
     r"^[a-zA-Z\d.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z\d-]+(?:\.[a-zA-Z\d-]+)*$",
@@ -28,12 +28,12 @@ enum EmailError {
   ),
   empty(null);
 
-  const EmailError(this.message);
+  new(this.message);
   final String? message;
 }
 
 class EmailConverter extends JsonConverter<Email, String> {
-  const EmailConverter();
+  const new();
   @override
   Email fromJson(String json) => Email.dirty(value: json);
 

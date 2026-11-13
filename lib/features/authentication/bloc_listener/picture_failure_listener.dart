@@ -1,7 +1,7 @@
 import "package:bank_app/features/customer_full_personal_info/bloc/customer_full_personal_info_bloc.dart";
 import "package:bank_app/shared/core/extensions/build_context_x.dart";
-import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
+import "package:material_ui/material_ui.dart";
 
 class PictureFailureListener extends BlocListener<CustomerFullPersonalInfoBloc,
     CustomerFullPersonalInfoState> {

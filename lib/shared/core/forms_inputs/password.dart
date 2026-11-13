@@ -1,9 +1,9 @@
 import "package:formz/formz.dart";
 
 class Password extends FormzInput<String, PasswordError> {
-  const Password.pure({String value = ""}) : super.pure(value);
+  const new pure({String value = ""}) : super.pure(value);
 
-  const Password.dirty({String value = ""}) : super.dirty(value);
+  const new dirty({String value = ""}) : super.dirty(value);
 
   static final _passwordRegExp = RegExp(
     r"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$",
@@ -30,6 +30,6 @@ enum PasswordError {
   ),
   anUnknownErrorHappened("Something unexpected happened");
 
-  const PasswordError(this.message);
+  new(this.message);
   final String? message;
 }

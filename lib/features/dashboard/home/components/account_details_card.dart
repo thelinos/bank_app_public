@@ -2,7 +2,7 @@ import "package:bank_app/shared/common/constants.dart" show Constants;
 import "package:bank_app/shared/core/extensions/build_context_x.dart"
     show BuildContextX;
 import "package:bank_app/shared/gen/assets.gen.dart" show Assets;
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart";
 
 class AccountDetailsCard extends StatelessWidget {
   const new({super.key});

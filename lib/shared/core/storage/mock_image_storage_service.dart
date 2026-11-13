@@ -1,10 +1,10 @@
-import 'dart:async';
-import 'package:bank_app/shared/core/bank_logger/bank_logger.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:multiple_result/multiple_result.dart';
+import "dart:async";
+import "package:bank_app/shared/core/bank_logger/bank_logger.dart";
+import "package:image_picker/image_picker.dart";
+import "package:multiple_result/multiple_result.dart";
 
 class MockImageStorageService {
-  MockImageStorageService._();
+  new _();
 
   static final Map<String, String> _imageUrls = {};
 
@@ -15,13 +15,13 @@ class MockImageStorageService {
     try {
       // Generate a mock URL for the image
       final mockUrl =
-          'https://mock-storage.example.com/user-profile/$userID/${DateTime.now().millisecondsSinceEpoch}.jpg';
+          "https://mock-storage.example.com/user-profile/$userID/${DateTime.now().millisecondsSinceEpoch}.jpg";
       _imageUrls[userID] = mockUrl;
-      BankLogger.info('Mock image saved for user: $userID with URL: $mockUrl');
+      BankLogger.info("Mock image saved for user: $userID with URL: $mockUrl");
       return Result.success(mockUrl);
     } catch (e, stackTrace) {
       BankLogger.error(
-        'Error saving mock image',
+        "Error saving mock image",
         error: e,
         stackTrace: stackTrace,
       );

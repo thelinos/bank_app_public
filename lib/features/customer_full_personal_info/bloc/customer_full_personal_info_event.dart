@@ -4,22 +4,22 @@ part of "customer_full_personal_info_bloc.dart";
 @immutable
 sealed class CustomerFullPersonalInfoEvent
     with _$CustomerFullPersonalInfoEvent {
-  const factory CustomerFullPersonalInfoEvent.authSubscriptionRequested() =
+  const factory authSubscriptionRequested() =
       _AuthSubscriptionRequested;
 
-  const factory CustomerFullPersonalInfoEvent.submittingCustomerPic() =
+  const factory submittingCustomerPic() =
       _SubmittingCustomerPic;
 
-  const factory CustomerFullPersonalInfoEvent.setCustomerImage(
+  const factory setCustomerImage(
     String imageUrl,
   ) = _SetImageUrl;
 
-  const factory CustomerFullPersonalInfoEvent.gettingPicture({
+  const factory gettingPicture({
     CroppedFile? image,
   }) = _GettingPicture;
 
-  const factory CustomerFullPersonalInfoEvent.pictureSelected() =
+  const factory pictureSelected() =
       _PictureSelected;
 
-  const factory CustomerFullPersonalInfoEvent.pictureTaken() = _PictureTaken;
+  const factory pictureTaken() = _PictureTaken;
 }

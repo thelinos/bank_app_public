@@ -1,4 +1,4 @@
-import "package:flutter/material.dart" show Color, TextStyle;
+import "package:material_ui/material_ui.dart" show Color, TextStyle;
 
 abstract final class AuthConstants {
   static const defaultTitleTextStyle = TextStyle(

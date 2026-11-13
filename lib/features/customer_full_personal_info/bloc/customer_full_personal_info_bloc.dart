@@ -2,14 +2,11 @@ import "dart:async";
 
 import "package:bank_app/features/authentication/models/user.dart";
 import "package:bank_app/features/authentication/repository/authentication_repository.dart";
-import "package:bank_app/shared/common/model/customer/customer_model.dart";
-import "package:bank_app/shared/common/model/customer_static_data/customer_static_data_model.dart";
-import "package:bank_app/shared/core/bank_logger/bank_logger.dart";
 import "package:bank_app/features/customer_full_personal_info/repository/customer_full_personal_info_repository.dart";
 import "package:bank_app/features/images/repository/image_repository.dart";
+import "package:bank_app/shared/core/bank_logger/bank_logger.dart";
 import "package:bloc/bloc.dart";
 import "package:bloc_concurrency/bloc_concurrency.dart";
-import "package:fast_immutable_collections/fast_immutable_collections.dart" show IListConst;
 import "package:formz/formz.dart";
 import "package:freezed_annotation/freezed_annotation.dart";
 import "package:image_cropper/image_cropper.dart";
@@ -21,14 +18,11 @@ part "customer_full_personal_info_state.dart";
 
 class CustomerFullPersonalInfoBloc
     extends Bloc<CustomerFullPersonalInfoEvent, CustomerFullPersonalInfoState> {
-  CustomerFullPersonalInfoBloc({
-    required AuthenticationRepository authenticationRepository,
-    required CustomerFullPersonalInfoRepository fullPersonalInfoRepository,
-    required ImageRepository imageRepository,
-  }) : _authenticationRepository = authenticationRepository,
-       _fullPersonalInfoRepository = fullPersonalInfoRepository,
-       _imageRepository = imageRepository,
-       super(const _CustomerFullPersonalInfoState()) {
+  new({
+    required this._authenticationRepository,
+    required this._fullPersonalInfoRepository,
+    required this._imageRepository,
+  }) : super(const _CustomerFullPersonalInfoState()) {
     on<_AuthSubscriptionRequested>(
       _onAuthSubscriptionRequested,
       transformer: droppable(),

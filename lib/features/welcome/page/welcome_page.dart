@@ -1,8 +1,19 @@
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart"
+    show
+        BuildContext,
+        Center,
+        Column,
+        FontWeight,
+        Image,
+        MainAxisAlignment,
+        Scaffold,
+        SizedBox,
+        StatelessWidget,
+        Text,
+        TextStyle,
+        Widget;
 
-class WelcomePage extends StatelessWidget {
-  const WelcomePage({super.key});
-
+class const WelcomePage({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,18 +21,11 @@ class WelcomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              "assets/images/logo.png",
-              width: 100,
-              height: 100,
-            ),
+            Image.asset("assets/images/logo.png", width: 100, height: 100),
             const SizedBox(height: 20),
             const Text(
               "Welcome to Kennedy Mega Bank",
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ],
         ),

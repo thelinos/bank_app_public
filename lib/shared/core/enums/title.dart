@@ -3,7 +3,7 @@ enum BankTitle {
   mr((remoteValue: "mr", localValue: "Mr.")),
   mrs((remoteValue: "mrs", localValue: "Mrs.")),
   miss((remoteValue: "miss", localValue: "Miss"));
-  const BankTitle(this.titleRecord);
+  new(this.titleRecord);
 
   final BankTitleRecord titleRecord;
 }

@@ -13,7 +13,7 @@ mixin ImageMixin {
 
     return image != null
         ? imageCropper.cropImage(
-            sourcePath: image!.path,
+            sourcePath: image.path,
             compressQuality: 100,
           )
         : null;

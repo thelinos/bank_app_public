@@ -2,12 +2,12 @@ part of "sign_in_bloc.dart";
 
 @freezed
 class SignInEvent with _$SignInEvent {
-  const factory SignInEvent.authSubscriptionRequested() =
+  const factory authSubscriptionRequested() =
       _AuthSubscriptionRequested;
-  const factory SignInEvent.emailChanged({required String value}) =
+  const factory emailChanged({required String value}) =
       _EmailChanged;
-  const factory SignInEvent.passwordChanged({required String value}) =
+  const factory passwordChanged({required String value}) =
       _PasswordChanged;
-  const factory SignInEvent.formSubmitted() =
+  const factory formSubmitted() =
       _FormSubmitted;
 }

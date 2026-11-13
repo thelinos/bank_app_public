@@ -4,7 +4,7 @@ enum Gender {
   male((remoteValue: "M", localValue: "Male")),
   female((remoteValue: "F", localValue: "Female"));
 
-  const Gender(this.genderRecord);
+  new(this.genderRecord);
 
   final GenderRecord genderRecord;
 }

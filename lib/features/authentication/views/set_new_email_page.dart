@@ -8,7 +8,7 @@ import "package:bank_app/features/routes/app_routes.gr.dart"
 import "package:bank_app/features/settings/common/settings_constants.dart"
     show SettingsConstants;
 import "package:bank_app/shared/common/components/email_text_field.dart";
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart";
 
 @RoutePage()
 class SetNewEmailPage extends StatelessWidget {

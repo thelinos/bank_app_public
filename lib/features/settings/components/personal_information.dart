@@ -3,7 +3,7 @@ import "package:bank_app/features/settings/components/personal_information_tile.
 import "package:bank_app/shared/common/constants.dart" show Constants;
 import "package:bank_app/shared/common/model/customer_static_data/customer_static_data_model.dart"
     show CustomerStaticDataModel, CustomerStaticDataX;
-import "package:flutter/material.dart";
+import "package:material_ui/material_ui.dart";
 
 class const PersonalInformation({super.key}) extends StatelessWidget {
   CustomerStaticDataModel get _customerPersonalInformation =>

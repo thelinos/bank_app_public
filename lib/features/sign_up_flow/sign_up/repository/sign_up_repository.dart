@@ -6,8 +6,7 @@ import "package:bank_app/shared/core/bank_logger/bank_logger.dart";
 import "package:multiple_result/multiple_result.dart";
 
 class SignUpRepository {
-  SignUpRepository({required AuthenticationRepository authenticationRepository})
-    : _authenticationRepository = authenticationRepository;
+  new({required this._authenticationRepository});
 
   final AuthenticationRepository _authenticationRepository;
 
@@ -30,7 +29,7 @@ class SignUpRepository {
       final user = User(
         uid: email.hashCode.toString(),
         email: email,
-        displayName: email.split('@')[0],
+        displayName: email.split("@")[0],
       );
 
       _authenticationRepository.setCurrentUser(user);
